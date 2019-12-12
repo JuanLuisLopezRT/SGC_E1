@@ -6,7 +6,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(value = "pacienteMedico")
 public class PacienteMedico {
 
-    private ObjectId _id;
+    
 	private String dniPaciente;
 	private String dniMedico;
 	private String especialidad;

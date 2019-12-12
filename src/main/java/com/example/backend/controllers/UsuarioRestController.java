@@ -117,7 +117,6 @@ public class UsuarioRestController {
 	 * @return
 	 * @throws UnsupportedEncodingException
 	 */
-	// TODO Encriptar los dotos que faltan
 	@PostMapping("/usuarios")
 	public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
 		usuario.set_id(ObjectId.get());

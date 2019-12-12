@@ -56,17 +56,9 @@ public class Encriptador {
 			byte[] cipherbytes = cipher.doFinal(textobytes);
 			// value = new BASE64Encoder().encode(cipherbytes);
 			value = Base64.getEncoder().encodeToString(cipherbytes);
-		} catch (NoSuchAlgorithmException ex) {
+		} catch (NoSuchAlgorithmException | NoSuchPaddingException | InvalidKeyException | IllegalBlockSizeException | BadPaddingException ex) {
 			System.err.println(ex.getMessage());
-		} catch (NoSuchPaddingException ex) {
-			System.err.println(ex.getMessage());
-		} catch (InvalidKeyException ex) {
-			System.err.println(ex.getMessage());
-		} catch (IllegalBlockSizeException ex) {
-			System.err.println(ex.getMessage());
-		} catch (BadPaddingException ex) {
-			System.err.println(ex.getMessage());
-		}
+		} 
 		return value;
 	}
 
@@ -87,17 +79,9 @@ public class Encriptador {
 			cipher.init(Cipher.DECRYPT_MODE, key);
 			byte[] cipherbytes = cipher.doFinal(value);
 			str = new String(cipherbytes);
-		} catch (InvalidKeyException ex) {
+		} catch (InvalidKeyException | IllegalBlockSizeException | BadPaddingException | NoSuchAlgorithmException | NoSuchPaddingException ex) {
 			System.err.println(ex.getMessage());
-		} catch (IllegalBlockSizeException ex) {
-			System.err.println(ex.getMessage());
-		} catch (BadPaddingException ex) {
-			System.err.println(ex.getMessage());
-		} catch (NoSuchAlgorithmException ex) {
-			System.err.println(ex.getMessage());
-		} catch (NoSuchPaddingException ex) {
-			System.err.println(ex.getMessage());
-		}
+		} 
 		return str;
 	}
 

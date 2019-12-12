@@ -14,7 +14,6 @@ public class Medico extends Usuario {
     //calendario
     
 	public Medico() {
-		// TODO Auto-generated constructor stub
 	}
 
 	public Medico(String dni, String password, String tipo, String nombre, String apellidos,
