@@ -10,19 +10,19 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Cita {
 
     @Id
-    private ObjectId _id;
+    private ObjectId id;
     private String dniPaciente;
     private String dniMedico;
     private Date fecha;
     private String consulta;
     private String especialidad;
 
-    public String get_id() {
-	return _id.toHexString();
+    public String getid() {
+	return id.toHexString();
     }
 
-    public void set_id(ObjectId _id) {
-	this._id = _id;
+    public void setid(ObjectId id) {
+	this.id = id;
     }
 
     public String getDniPaciente() {

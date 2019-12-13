@@ -1,8 +1,4 @@
 package com.example.backend.models.entity;
-
-import java.util.Date;
-import java.util.List;
-
 import org.bson.types.ObjectId;
 import org.springframework.data.annotation.Id;
 import org.springframework.data.mongodb.core.mapping.Document;
@@ -12,40 +8,40 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Especialidad {
 
     @Id
-    private ObjectId _id;
+    private ObjectId id;
     private String nombre;
     private int duracionCita;
     private String[] listaMedicos;
 
-    public String get_id() {
-	return _id.toHexString();
+    public String getid() {
+	return id.toHexString();
     }
 
-    public void set_id(ObjectId _id) {
-	this._id = _id;
+    public void setid(ObjectId id) {
+	this.id = id;
     }
 
-    public String get_nombre() {
+    public String getNombre() {
         return nombre;
     }
 
-    public void set_nombre(String nombre) {
+    public void setNombre(String nombre) {
         this.nombre = nombre;
     }
 
-    public int get_duracionCita() {
+    public int getDuracionCita() {
         return duracionCita;
     }
 
-    public void set_duracionCita(int duracionCita) {
+    public void setDuracionCita(int duracionCita) {
         this.duracionCita = duracionCita;
     }
 
-    public String[] get_listaMedicos() {
+    public String[] getListaMedicos() {
         return listaMedicos;
     }
 
-    public void set_listaMedicos(String[] listaMedicos) {
+    public void setListaMedicos(String[] listaMedicos) {
         this.listaMedicos = listaMedicos;
     }
 

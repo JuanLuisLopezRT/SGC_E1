@@ -119,7 +119,7 @@ public class UsuarioRestController {
 	 */
 	@PostMapping("/usuarios")
 	public Usuario registrarUsuario(@Valid @RequestBody Usuario usuario) throws UnsupportedEncodingException {
-		usuario.set_id(ObjectId.get());
+		usuario.setid(ObjectId.get());
 		usuario = encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;
@@ -200,7 +200,7 @@ public class UsuarioRestController {
 	@PutMapping("/usuarios/registrarMedico/{id}")
 	public Medico registrarMedico(@PathVariable("id") ObjectId id, @Valid @RequestBody Medico medico)
 			throws UnsupportedEncodingException {
-		medico.set_id(id);
+		medico.setid(id);
 		medico.setTipo("MEDICO");
 		medico.setEspecialidad(medico.getEspecialidad());
 		medico = encriptador.encriptarMedico(medico);
@@ -219,7 +219,7 @@ public class UsuarioRestController {
 	@PutMapping("/usuarios/password/{id}")
 	public Usuario modificarPassword(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
-		usuario.set_id(id);
+		usuario.setid(id);
 		usuario = encriptador.encriptarUsuario(usuario);
 		usuario.setPassword(encriptador.encriptarPassword(usuario.getPassword()));
 		usuarioService.saveUser(usuario);
@@ -237,7 +237,7 @@ public class UsuarioRestController {
 	@PutMapping("/usuarios/datosContacto/{id}")
 	public Usuario modificarDatosContacto(@PathVariable("id") ObjectId id, @Valid @RequestBody Usuario usuario)
 			throws UnsupportedEncodingException {
-		usuario.set_id(id);
+		usuario.setid(id);
 		usuario = encriptador.encriptarUsuario(usuario);
 		usuarioService.saveUser(usuario);
 		return usuario;

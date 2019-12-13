@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Usuario {
 
     @Id
-    private ObjectId _id;
+    private ObjectId id;
 
     @Indexed(unique = true)
     private String dni;
@@ -67,12 +67,12 @@ public class Usuario {
 		this.fechaNacimiento = fechaNacimiento;
 	}
 
-	public String get_id() {
-	return _id.toHexString();
+	public String getid() {
+	return id.toHexString();
     }
 
-    public void set_id(ObjectId _id) {
-	this._id = _id;
+    public void setid(ObjectId id) {
+	this.id = id;
     }
 
     public String getDni() {

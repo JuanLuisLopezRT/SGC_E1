@@ -7,15 +7,15 @@ import org.springframework.data.mongodb.core.mapping.Document;
 @Document(value = "privilegios")
 public class Privilegio {
 	@Id
-	private ObjectId _id;
+	private ObjectId id;
 	private String nombre;
 	
-	public String get_id() {
-		return _id.toHexString();
+	public String getid() {
+		return id.toHexString();
 	}
 
-	public void set_id(ObjectId _id) {
-		this._id = _id;
+	public void setid(ObjectId id) {
+		this.id = id;
 	}
 
 	public String getNombre() {

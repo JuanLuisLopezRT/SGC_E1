@@ -126,7 +126,7 @@ public class CitaRestController {
 	 */
 	@PostMapping("/citas")
 	public Cita addCita(@Valid @RequestBody Cita cita) throws UnsupportedEncodingException {
-		cita.set_id(ObjectId.get());
+		cita.setid(ObjectId.get());
 		encriptador.encriptarCita(cita);
 		citaService.saveCita(cita);
 		return cita;
@@ -152,7 +152,7 @@ public class CitaRestController {
 	@PutMapping("/citas/{id}")
 	public Cita modificarFechaCita(@PathVariable("id") ObjectId id, @Valid @RequestBody Cita cita)
 			throws UnsupportedEncodingException {
-		cita.set_id(id);
+		cita.setid(id);
 		cita = encriptador.encriptarCita(cita);
 		citaService.saveCita(cita);
 		return cita;
@@ -187,9 +187,9 @@ public class CitaRestController {
 		Medico medico = usuarioService.findMedicoByDni(dniMedico);
 		Horario horario = horarioService.findHorarioByDnimedicoAndDiaAndMesAndAno(dniMedico, dia, mes, ano);
 		Especialidad especialidad=especialidadService.findByNombre(medico.getEspecialidad());
-		int duracionCita = especialidad.get_duracionCita();
+		int duracionCita = especialidad.getDuracionCita();
 		
-		ArrayList<Date> listaCitas = horario.getListaCitas();
+		ArrayList<Date> listaCitas = (ArrayList<Date>) horario.getListaCitas();
 		
 		LocalTime horaInicio = LocalTime.of(7, 00);
 		LocalTime horaFin = LocalTime.of(13, 00);	
