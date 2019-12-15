@@ -10,16 +10,16 @@ import org.springframework.data.mongodb.core.mapping.Document;
 public class Rol {
 
 	@Id
-	private ObjectId _id;
+	private ObjectId id;
 	private String nombre;
 	private List<String> privilegios;
 
-	public String get_id() {
-		return _id.toHexString();
+	public String getId() {
+		return id.toHexString();
 	}
 
-	public void set_id(ObjectId _id) {
-		this._id = _id;
+	public void setId(ObjectId id) {
+		this.id = id;
 	}
 	public String getNombre() {
 		return nombre;

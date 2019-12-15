@@ -225,10 +225,11 @@ public class CitaRestController {
      * obtener los medicos de una especialidad
      * @param id
      * @return
+	 * @throws UnsupportedEncodingException 
 	 * @throws Exception 
      */
 	@GetMapping("/citas/especialidades/{nombreEspecialidad}/{dni}")
-	public String[] getEspecialidadesByid(@PathVariable ("nombreEspecialidad") String nombreEspecialidad, @PathVariable ("dni") String dniPaciente) throws Exception{
+	public String[] getEspecialidadesByid(@PathVariable ("nombreEspecialidad") String nombreEspecialidad, @PathVariable ("dni") String dniPaciente) throws IllegalArgumentException, UnsupportedEncodingException{
 		PacienteMedico pacMed = pacienteMedicoRepo.findByPacienteEspecialidad(dniPaciente, nombreEspecialidad);
 		Usuario med = usuarioService.findUserByDni(encriptador.encriptar(pacMed.getDniMedico()));
 		String[] lista = new String[1];
